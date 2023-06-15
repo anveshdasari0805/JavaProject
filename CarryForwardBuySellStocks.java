@@ -8,30 +8,20 @@ public class CarryForwardBuySellStocks {
         {
             A[i]=sc.nextInt();
         }
-        /**int ans=0;
+
+        int small=A[0],big=Integer.MIN_VALUE;
+        int ksmall=0,lbig=0;
         for(int i=0;i<N;i++)
         {
-            int max=A[i];
-            for(int j=i+1;j<N;j++)
-            {
-                if(A[j]>max)
-                {
-                    max=A[j];
-                }
-            }
-
-            ans=(max-A[i])>ans?(max-A[i]):ans;
+            small=Math.min(A[i],small);
+            ksmall=Math.min(ksmall,i);
+            big=Math.max(A[i],big);
+            lbig=Math.max(lbig,i);
         }
-
-        System.out.println(ans);*/
-        int profit=0,max=A[N-1];
-        for(int i=N-2;i>=0;i--)
-        {
-            if(A[i]>max)
-            {
-
-            }
-        }
+        System.out.println(big);
+        System.out.println(lbig);
+        System.out.println(small);
+        System.out.println(ksmall);
 
 
     }
