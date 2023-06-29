@@ -9,8 +9,8 @@ public class HashMapCommonElementsInArray {
             A[i]=sc.nextInt();
         }
         int M = sc.nextInt();
-        int B[] = new int[N];
-        for(int i=0;i<N;i++)
+        int B[] = new int[M];
+        for(int i=0;i<M;i++)
         {
             B[i]=sc.nextInt();
         }
@@ -38,29 +38,38 @@ public class HashMapCommonElementsInArray {
                 hmB.put(B[i],1);
             }
         }
-        for(Integer key:hm.keySet())
+        /**for(Integer key:hm.keySet())
         {
             System.out.println("Key is "+key+"  Value is "+hm.get(key));
         }
         for(Integer key:hmB.keySet())
         {
-            System.out.println("Key is "+key+"  Value is "+hmB.get(key));
-        }
+            System.out.println("B hashmap Key is "+key+"  Value is "+hmB.get(key));
+        }*/
         ArrayList<Integer> C = new ArrayList<>();
         for(Integer key:hm.keySet())
         {
-            if(hmB.containsKey(key))
+            boolean key1=hmB.containsKey(key);
+
+            if(key1)
             {
-                if(hm.get(key)<=hmB.get(key))
+                int hmvalue=hm.get(key);
+                int hmBvalue=hmB.get(key);
+                if(hmvalue<=hmBvalue)
                 {
-                    for(int i=0;i<hm.get(key);i++) {
+                    for(int i=0;i<hmvalue;i++) {
                         C.add(key);
                     }
                 }
+                else
+                {
+                    for(int i=0;i<hmBvalue;i++) {
+                        C.add(key);
+                    }
+
+                }
             }
         }
-        System.out.println(C.size());
-
         for(int i=0;i<C.size();i++)
         {
             System.out.println(C.get(i));
