@@ -1,3 +1,5 @@
+package Recursion;
+
 import java.util.*;
 public class RecursionFactorial {
         public static long fact(int A)

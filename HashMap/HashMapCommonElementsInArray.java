@@ -1,3 +1,5 @@
+package HashMap;
+
 import java.util.*;
 public class HashMapCommonElementsInArray {
     public static void main(String[] args) {
